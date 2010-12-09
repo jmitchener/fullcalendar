@@ -274,7 +274,7 @@ function AgendaView(element, calendar, viewName) {
 		viewWidth = width;
 		colContentPositions.clear();
 		
-		body.width(width).css('overflow', 'auto');
+		body.width(width).css('overflow', 'hidden');
 		bodyTable.width('');
 		
 		var topTDs = head.find('tr:first th'),
@@ -303,16 +303,16 @@ function AgendaView(element, calendar, viewName) {
 		setOuterWidth(topTDs.slice(1, -2), colWidth);
 		
 		// column width for last column
-		if (width != clientWidth) { // has scrollbar
+/*		if (width != clientWidth) { // has scrollbar
 			setOuterWidth(topTDs.slice(-2, -1), clientWidth - axisWidth - colWidth*(colCnt-1));
 			topTDs.slice(-1).show();
 			allDayLastTH.show();
-		}else{
+		}else{*/
 			body.css('overflow', 'hidden');
 			topTDs.slice(-2, -1).width('');
 			topTDs.slice(-1).hide();
 			allDayLastTH.hide();
-		}
+/*		}*/
 		
 		bg.css({
 			top: head.find('tr').height(),
